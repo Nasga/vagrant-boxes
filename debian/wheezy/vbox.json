@@ -5,7 +5,7 @@
         "iso_url": "",
         "iso_checksum": "",
 
-        "headless": false,
+        "headless": true,
         "disk_size": 5120,
         "ssh_username": "vagrant",
         "ssh_password": "vagrant",
@@ -42,7 +42,11 @@
         {
             "type": "shell",
             "scripts": [
-                "scripts/packages.sh"
+                "scripts/packages.sh",
+                "../../scripts/vagrant.sh",
+                "../../scripts/chef.sh",
+                "../../scripts/vbox.sh",
+                "../../scripts/trim.sh"
             ]
         }
     ],
