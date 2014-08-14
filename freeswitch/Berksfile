@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+source 'https://supermarket.getchef.com'
+
+cookbook 'apt', ">=1.9.0"
+cookbook 'freeswitch', '~> 0.6.4'
