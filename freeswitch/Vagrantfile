@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
   # config.vm.synced_folder "../data", "/vagrant_data"
   config.vm.provider "virtualbox" do |vb|
     # Don't boot with headless mode
-    vb.gui = true
+    #vb.gui = true
   
     # Use VBoxManage to customize the VM. For example to change memory:
     # vb.customize ["modifyvm", :id, "--memory", "1024"]
@@ -32,35 +32,6 @@ Vagrant.configure(2) do |config|
     chef.roles_path = "./roles/"
 
     chef.add_role "sip_server"
-
-    chef.json = {
-      'freeswitch' => {
-        'autoload_modules' => %w[
-          mod_console
-          mod_logfile
-          mod_event_socket
-          mod_sofia
-          mod_loopback
-          mod_commands
-          mod_conference
-          mod_db
-          mod_dptools
-          mod_expr
-          mod_fifo
-          mod_hash
-          mod_esf
-          mod_fsv
-          mod_dialplan_xml
-          mod_g723_1
-          mod_g729
-          mod_sndfile
-          mod_native_file
-          mod_local_stream
-          mod_tone_stream
-          mod_spidermonkey
-        ]
-      }
-    }
   end
 
   # Enable provisioning with chef server, specifying the chef server URL,
